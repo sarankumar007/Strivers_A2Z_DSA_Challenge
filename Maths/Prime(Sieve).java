@@ -23,3 +23,5 @@ public class Main
 		
 	}
 }
+
+//removing all multiples except it's first occurence.Left out elements are prime.
