@@ -1,25 +1,26 @@
-import java.util.*;
-import java.math.*;
-public class Main
-{
-	public static void main(String[] args) {
-	    int a=10;
-	    int n=30;
-		boolean arr[]=new boolean[n+1];
-	    Arrays.fill(arr,true);
-		arr[0]=false;
-		arr[1]=false;
-	
-		for(int i=2;i<=Math.sqrt(n);i++){
-		    if(arr[i]){
-		        for(int j=i*i;j<=n;j=j+i)
-		        arr[j]=false;
-		    }
-		}
-		for(int i=a;i<n+1;i++){
-		    if(arr[i])
-		    System.out.print(i+" ");
-		}
-		
-	}
+public class GCD {
+    // Function to return gcd of a and b
+    static int gcd(int a, int b)
+    {
+        if (a == 0)
+            return b;
+        return gcd(b % a, a);
+    }
+ 
+    // Function to find gcd of array of
+    // numbers
+    static int findGCD(int arr[], int n)
+    {
+        int result = arr[0];
+        for (int element: arr){
+            result = gcd(result, element);
+ 
+            if(result == 1)
+            {
+               return 1;
+            }
+        }
+ 
+        return result;
+    }
 }
